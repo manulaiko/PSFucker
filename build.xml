@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <path id="classpath">
+        <fileset dir="lib" />
+    </path>
+
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="bin/classes"/>
+        <javac srcdir="src" destdir="bin/classes" classpathref="classpath" />
+    </target>
+
+    <target name="jar">
+        <mkdir dir="bin/jar"/>
+        <jar destfile="bin/jar/PSFucker.jar" basedir="bin/classes">
+            <zipgroupfileset includes="*.jar" dir="lib"/>
+            <manifest>
+                <attribute name="Main-Class" value="com.manulaiko.Main"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="run">
+        <java jar="bin/jar/PSFucker.jar" fork="true"/>
+    </target>
+</project>
