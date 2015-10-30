@@ -10,6 +10,8 @@ import com.manulaiko.psfucker.utils.*;
  * 
  * This class will actually fuck the ps
  * 
+ * Well actually this class is never used, yet...
+ * 
  * @author Manulaiko
  * @package com.manulaiko
  */
