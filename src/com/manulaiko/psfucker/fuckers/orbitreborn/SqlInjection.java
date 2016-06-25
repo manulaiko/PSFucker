@@ -4,7 +4,7 @@ import com.manulaiko.psfucker.Option;
 import com.manulaiko.psfucker.net.SocketClient;
 import com.manulaiko.psfucker.net.orbitreborn.ConnectionManager;
 import com.manulaiko.psfucker.utils.Tools;
-import javafx.util.Callback;
+import com.manulaiko.psfucker.utils.Callback;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;

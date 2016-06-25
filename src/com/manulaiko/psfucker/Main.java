@@ -19,7 +19,7 @@ public class Main
      * 
      * @var String
      */
-    public static String version = "v0.1.0";
+    public static String version = "v0.1.1";
     
     /**
      * Server ip
@@ -33,7 +33,7 @@ public class Main
      *
      * @var Map
      */
-    public static Map<String, Fingerprinter> fingerprinters = new TreeMap<String, Fingerprinter>();
+    public static Map<String, Fingerprinter> fingerprinters = new TreeMap<>();
 
     /**
      * Flag to indicate if we're running or not on debug version
@@ -79,28 +79,32 @@ public class Main
      */
     public static Fingerprinter fingerprint(String server)
     {
-        Map<String, Fingerprinter> matches = new TreeMap<String, Fingerprinter>();
+        Map<String, Fingerprinter> matches = new TreeMap<>();
 
-        for(Entry<String, Fingerprinter> fingerprint : fingerprinters.entrySet()) {
-            if(fingerprint.getValue().identify(server)) {
-                matches.put(fingerprint.getKey(), fingerprint.getValue());
+        fingerprinters.forEach((k, f) -> {
+            if(f.identify(server)) {
+                matches.put(k, f);
             }
-        }
+        });
 
         if(matches.size() <= 0) {
             System.out.println("Couldn't identify server :(");
             try {
                 Thread.sleep(300);
-            } catch(Exception e) { }
+            } catch(Exception e) {
+                //Empty
+            }
             Tools.clearConsole();
             start();
         }
 
         System.out.println(matches.size()+" matches found!");
         System.out.println("Choose which fucker you want to use from the list:");
-        for(Entry<String, Fingerprinter> e : matches.entrySet()) {
-            System.out.println(" -"+e.getKey()+" based server fucker");
-        }
+
+        matches.forEach((k, f) -> {
+            System.out.println(" -"+ k +" based server fucker");
+        });
+
         System.out.print("Enter the name of the server: ");
         String match = Tools.in.nextLine();
 
@@ -111,7 +115,9 @@ public class Main
             System.out.println("Please, choose one of the following servers... let's see if this time you can do it");
             try {
                 Thread.sleep(300);
-            } catch(Exception e) { }
+            } catch(Exception e) {
+                //Empty
+            }
             Tools.clearConsole();
             fingerprint(server);
         }
@@ -156,7 +162,9 @@ public class Main
                     System.out.println("Please, choose one of the following servers... let's see if this time you can do it");
                     try {
                         Thread.sleep(300);
-                    } catch(Exception e) { }
+                    } catch(Exception e) {
+                        //Empty
+                    }
                     Tools.clearConsole();
                     start();
                 }
@@ -168,7 +176,10 @@ public class Main
 
         Tools.clearConsole();
         System.out.println("Fucking server "+server+"!");
-        fServer.fucker.fuck();
+
+        if(fServer != null) {
+            fServer.fucker.fuck();
+        }
 
         start();
     }

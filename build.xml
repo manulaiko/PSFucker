@@ -16,7 +16,7 @@
     <target name="jar">
         <mkdir dir="bin/jar"/>
         <jar destfile="bin/jar/PSFucker.jar" basedir="bin/classes">
-            <zipgroupfileset includes="*.jar" dir="lib"/>
+            <!-- <zipgroupfileset includes="*.jar" dir="lib"/> -->
             <manifest>
                 <attribute name="Main-Class" value="com.manulaiko.psfucker.Main"/>
             </manifest>
