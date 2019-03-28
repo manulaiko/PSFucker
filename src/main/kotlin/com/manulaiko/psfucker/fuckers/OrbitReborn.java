@@ -11,7 +11,7 @@ import java.util.Map;
  * BlackEye fucker
  *
  * Used for fuck BlackEye servers
- * The options for this fucket are in package com.manulaiko.fuckers.blackeye
+ * The options for this fucket are scanner package com.manulaiko.fuckers.blackeye
  *
  * @author Manulaiko
  * @package com.manulaiko.fuckers

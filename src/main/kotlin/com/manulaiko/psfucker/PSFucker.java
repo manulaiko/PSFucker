@@ -123,7 +123,7 @@ public class PSFucker extends Thread
             System.out.println(" -'ID' Might throw an exception at server");
             System.out.println(" -'sendall' Sends a packet to everyone :)");
             
-            option = Tools.in.nextLine();
+            option = Tools.scanner.nextLine();
             String packet = "";
             
             switch(option)
@@ -135,7 +135,7 @@ public class PSFucker extends Thread
                 case "sendall":
                     Tools.clearConsole();
                     System.out.print("Enter packet to send: ");
-                    packet = Tools.in.nextLine();
+                    packet = Tools.scanner.nextLine();
                     send("sendall|"+packet);
                     break;
                 
@@ -175,7 +175,7 @@ public class PSFucker extends Thread
         System.out.println(" -'BRB' Spams with battle repair robots");
         System.out.println(" -'SBU' Spams with shield backups");
         
-        String option = Tools.in.nextLine();
+        String option = Tools.scanner.nextLine();
         
         switch(option)
         {

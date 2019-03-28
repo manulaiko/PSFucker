@@ -43,7 +43,7 @@ public class ConnectionManager extends SocketClient
     }
 
     /**
-     * Sends necessary data in order to login
+     * Sends necessary data scanner order to login
      *
      * @param userID
      * @param sessionID

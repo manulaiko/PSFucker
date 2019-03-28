@@ -69,7 +69,7 @@ public abstract class Fucker
             System.out.println(" "+(++i)+") exit: Stops fucking the server");
 
             System.out.print("What you do you want to do? ");
-            option = Tools.in.nextLine();
+            option = Tools.scanner.nextLine();
 
             if(option.equalsIgnoreCase("exit")) {
                 return;

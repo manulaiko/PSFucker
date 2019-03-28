@@ -20,7 +20,7 @@ public class Tools
      * 
      * @var java.util.Scanner
      */
-    public static Scanner in = new Scanner(System.in);
+    public static Scanner scanner = new Scanner(System.in);
     public static Random r;
 
     /**

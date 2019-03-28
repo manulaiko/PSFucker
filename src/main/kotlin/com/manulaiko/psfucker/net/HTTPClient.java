@@ -59,7 +59,7 @@ public class HTTPClient
 	}
 	
 	/**
-	 * Returns whether a path/file in the server exists or not
+	 * Returns whether a path/file scanner the server exists or not
 	 * 
 	 * @param path Path to check
 	 * @return True if exists, false if not
