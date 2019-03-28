@@ -1,6 +1,6 @@
-package com.manulaiko.psfucker.fingerprinters;
+package com.manulaiko.psfucker.fingerprinters
 
-import com.manulaiko.psfucker.Fingerprinter;
+import com.manulaiko.psfucker.Fingerprinter
 
 /**
  * Fingerprinter for all servers
@@ -10,16 +10,14 @@ import com.manulaiko.psfucker.Fingerprinter;
  * @author Manulaiko
  * @package com.manulaiko.fingerprinters
  */
-public class Global extends Fingerprinter
-{
+class Global : Fingerprinter<*>() {
     /**
      * Identifies the server
      *
      * @param server
      * @return true
      */
-    public boolean identify(String server)
-    {
-        return true;
+    override fun identify(server: String): Boolean {
+        return true
     }
 }

@@ -1,4 +1,4 @@
-package com.manulaiko.psfucker;
+package com.manulaiko.psfucker
 
 /**
  * Option class
@@ -10,30 +10,25 @@ package com.manulaiko.psfucker;
  * @author Manulaiko
  * @package com.manulaiko
  */
-public abstract class Option
-{
-    /**
-     * Fucker
-     */
-    public Fucker fucker;
+abstract class Option
+/**
+ * Constructor
+ */
+(
+        /**
+         * Fucker
+         */
+        var fucker: Fucker) {
 
     /**
      * Description of the option
      */
-    public String description;
-
-    /**
-     * Constructor
-     */
-    public Option(Fucker fucker)
-    {
-        this.fucker = fucker;
-    }
+    var description: String? = null
 
     /**
      * Fuck method
      *
      * It will fuck the server with this option
      */
-    public abstract void fuck();
+    abstract fun fuck()
 }
