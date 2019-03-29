@@ -1,11 +1,19 @@
 package com.manulaiko.psfucker
 
 /**
- * Base interface for all servers fingerprinters
+ * Fingerprinter interface.
+ * ========================
  *
- * @author Manulaiko
+ * Base interface for all servers fingerprinters.
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
 interface Fingerprinter<T : Fucker> {
+    /**
+     * The fucker for this kind of server.
+     */
+    val fucker: T
+
     /**
      * Starts fingerprinting the server
      *

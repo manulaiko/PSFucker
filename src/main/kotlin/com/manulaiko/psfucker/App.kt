@@ -32,7 +32,7 @@ class App {
      *
      * @var Map
      */
-    private val fingerprinters: MutableMap<String, Fingerprinter> = TreeMap()
+    private val fingerprinters: MutableMap<String, Fingerprinter<*>> = TreeMap()
 
     /**
      * Main method.
@@ -67,9 +67,8 @@ class App {
      *
      * @return Fingerprinter object
      */
-    private fun fingerprint(server: String): Fingerprinter {
-        val matches = TreeMap<String, Fingerprinter>()
-
+    private fun fingerprint(server: String): Fingerprinter<*>{
+        val matches = TreeMap<String, Fingerprinter<*>>()
         fingerprinters.forEach { k, f ->
             if (f.identify(server)) {
                 matches[k] = f
@@ -116,7 +115,7 @@ class App {
 
         println("Fucking server $server!")
 
-        fServer.fucker?.fuck()
+        fServer.fucker.fuck()
 
         run()
     }
